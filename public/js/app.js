@@ -231,7 +231,8 @@ function verificaSuscripcion(activadas) {
     }
 
 }
-return verificaSuscripcion();
+
+verificaSuscripcion();
 
 
 function enviarNotificacion() {
