@@ -1,6 +1,7 @@
 // Routes.js - Módulo de rutas
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const push = require('./push');
 
 
 const mensajes = [
@@ -43,19 +44,24 @@ router.post('/', function(req, res) {
 //almacenar suscripcion
 router.post('/subscribe', (req, res) => {
 
+
+
     res.json('subscribe');
 
 });
 
 router.get('/key', (req, res) => {
 
+    const key = push.getKey();
 
-    res.send('key');
+
+    res.send(key);
 
 });
 
 //enviar una notificacion a las perosnas
 router.post('/push', (req, res) => {
+
 
     res.json(post);
 
