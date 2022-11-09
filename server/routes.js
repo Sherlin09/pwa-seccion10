@@ -65,6 +65,14 @@ router.get('/key', (req, res) => {
 //enviar una notificacion a las perosnas
 router.post('/push', (req, res) => {
 
+    const post = {
+        titulo: req.body.titulo,
+        cuerpo: req.body.cuerpo,
+        usuario: req.body.usuario
+    };
+
+
+    push.sendPush(post);
 
     res.json(post);
 
