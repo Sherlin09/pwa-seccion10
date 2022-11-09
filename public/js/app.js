@@ -338,3 +338,21 @@ btnDesactivadas.on('click', function() {
 
 
 });
+
+function cancelarSuscripcion() {
+
+    swReg.pushManager.getSubscription().then(subs => {
+
+        subs.unsubscribe().then(() => verificaSuscripcion(false));
+
+    });
+
+
+}
+
+btnActivadas.on('click', function() {
+
+    cancelarSuscripcion();
+
+
+});
